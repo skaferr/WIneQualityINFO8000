@@ -1,0 +1,45 @@
+---
+title: "Wine Quality Data Analysis"
+author: "Sarah Ferrero"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wine Quality Distribution
+The following code will evaluate the basic descriptive statistics of the Wine Quality variable of interest/ variable to be tested in the machine learning algorithms.
+
+```{r}
+#import and view dataset
+library(readxl)
+winequalityred <- read_excel("C:/Users/sarah/Desktop/info8000/winequalityred.xlsx", 
+    col_types = c("numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric"))
+View(winequalityred)
+QualityMax
+QualityMin
+QualityAverage
+QualityMedian
+
+```
+
+## Wine Quality Distribution Graph
+
+
+```{r}
+
+```
+
+##Independent Variable Descripive Statistics
+```{r}
+
+```
+##Variable Correlations
+```{r}
+
+```
+
