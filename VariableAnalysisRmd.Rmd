@@ -358,4 +358,58 @@ col = colorRampPalette(c("red", "darkgrey","blue"))(100))
 library(knitr)
 kable(wine.cor, caption = "wine quality feature correlations")
 ```
+#Alcohol Vs. Quality
+```{r}
+ggplot(data=winequalityred, aes(x=as.numeric(quality), y=alcohol)) +
+    geom_jitter(alpha=1/3) +
+    geom_smooth(method='lm', aes(group = 1))+
+    geom_hline(yintercept=alcoholAverage, linetype='longdash', alpha=.5, color='blue') +
+    geom_vline(xintercept = QualityAverage, linetype='longdash', color='purple', alpha=.5) +
+    xlab("Wine Quality") +
+    ylab("Alcohol")
+```
+
+#Volatile Acidity Vs. Quality:
+```{r}
+ggplot(data=winequalityred, aes(x=as.numeric(quality), y=volatileacidity)) +
+    geom_jitter(alpha=1/3) +
+    geom_smooth(method='lm', aes(group = 1))+
+    geom_hline(yintercept=volatileacAverage, linetype='longdash', alpha=.5, color='blue') +
+    geom_vline(xintercept = QualityAverage, linetype='longdash', color='purple', alpha=.5) +
+    xlab("Wine Quality") +
+    ylab("Volatile Acidity")
+```
+
+#Citric Acid Vs. Quality:
+```{r}
+ggplot(data=winequalityred, aes(x=as.numeric(quality), y=citricacid)) +
+    geom_jitter(alpha=1/3) +
+    geom_smooth(method='lm', aes(group = 1))+
+    geom_hline(yintercept=citricAverage, linetype='longdash', alpha=.5, color='blue') +
+    geom_vline(xintercept = QualityAverage, linetype='longdash', color='purple', alpha=.5) +
+    xlab("Wine Quality") +
+    ylab("Citric Acid")
+```
+
+#Total Sulfur Vs. Quality:
+```{r}
+ggplot(data=winequalityred, aes(x=as.numeric(quality), y=totalsulfurdioxide)) +
+    geom_jitter(alpha=1/3) +
+    geom_smooth(method='lm', aes(group = 1))+
+    geom_hline(yintercept=totalsulfurdioxideAverage, linetype='longdash', alpha=.5, color='blue') +
+    geom_vline(xintercept = QualityAverage, linetype='longdash', color='purple', alpha=.5) +
+    xlab("Wine Quality") +
+    ylab("Total Sulfur Dioxide")
+```
+
+#Density Vs. Quality:
+```{r}
+ggplot(data=winequalityred, aes(x=as.numeric(quality), y=density)) +
+    geom_jitter(alpha=1/3) +
+    geom_smooth(method='lm', aes(group = 1))+
+    geom_hline(yintercept=densityAverage, linetype='longdash', alpha=.5, color='blue') +
+    geom_vline(xintercept = QualityAverage, linetype='longdash', color='purple', alpha=.5) +
+    xlab("Wine Quality") +
+    ylab("Density")
+```
 
