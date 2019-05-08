@@ -82,42 +82,141 @@ volatileacStandardDeviation
 ```
 #Citric Acid
 ```{r winequalityred}
-
+citricMax<-max(winequalityred$citricacid)
+citricMin<-min(winequalityred$citricacid)
+citricAverage<-mean(winequalityred$citricacid)
+citricMedian<-median(winequalityred$citricacid)
+citricMax
+citricMin
+citricAverage
+citricMedian
+citricMode <- names(which.max(table(winequalityred$citricacid)))
+citricMode
+citricStandardDeviation <- sd(winequalityred$citricacid)
+citricStandardDeviation
 ```
 #Residual Sugar
 ```{r winequalityred}
-
+sugarMax<-max(winequalityred$residualsugar)
+sugarMin<-min(winequalityred$residualsugar)
+sugarAverage<-mean(winequalityred$residualsugar)
+sugarMedian<-median(winequalityred$residualsugar)
+sugarMax
+sugarMin
+sugarAverage
+sugarMedian
+sugarMode <- names(which.max(table(winequalityred$residualsugar)))
+sugarMode
+sugarStandardDeviation <- sd(winequalityred$residualsugar)
+sugarStandardDeviation
 ```
 #Chlorides
 ```{r winequalityred}
-
+chloridesMax<-max(winequalityred$chlorides)
+chloridesMin<-min(winequalityred$chlorides)
+chloridesAverage<-mean(winequalityred$chlorides)
+chloridesMedian<-median(winequalityred$chlorides)
+chloridesMax
+chloridesMin
+chloridesAverage
+chloridesMedian
+chloridesMode <- names(which.max(table(winequalityred$chlorides)))
+chloridesMode
+chloridesStandardDeviation <- sd(winequalityred$chlorides)
+chloridesStandardDeviation
 ```
 #Free SO2
 ```{r winequalityred}
-
+freesulfurdioxideMax<-max(winequalityred$freesulfurdioxide)
+freesulfurdioxideMin<-min(winequalityred$freesulfurdioxide)
+freesulfurdioxideAverage<-mean(winequalityred$freesulfurdioxide)
+freesulfurdioxideMedian<-median(winequalityred$freesulfurdioxide)
+freesulfurdioxideMax
+freesulfurdioxideMin
+freesulfurdioxideAverage
+freesulfurdioxideMedian
+freesulfurdioxideMode <- names(which.max(table(winequalityred$freesulfurdioxide)))
+freesulfurdioxideMode
+freesulfurdioxideStandardDeviation <- sd(winequalityred$freesulfurdioxide)
+freesulfurdioxideStandardDeviation
 ```
 
 #Total SO2
 ```{r winequalityred}
-
+totalsulfurdioxideMax<-max(winequalityred$totalsulfurdioxide)
+totalsulfurdioxideMin<-min(winequalityred$totalsulfurdioxide)
+totalsulfurdioxideAverage<-mean(winequalityred$totalsulfurdioxide)
+totalsulfurdioxideMedian<-median(winequalityred$totalsulfurdioxide)
+totalsulfurdioxideMax
+totalsulfurdioxideMin
+totalsulfurdioxideAverage
+totalsulfurdioxideMedian
+totalsulfurdioxideMode <- names(which.max(table(winequalityred$totalsulfurdioxide)))
+totalsulfurdioxideMode
+totalsulfurdioxideStandardDeviation <- sd(winequalityred$totalsulfurdioxide)
+totalsulfurdioxideStandardDeviation
 ```
-#Desnity
+#Density
 ```{r winequalityred}
-
+densityMax<-max(winequalityred$density)
+densityMin<-min(winequalityred$density)
+densityAverage<-mean(winequalityred$density)
+densityMedian<-median(winequalityred$density)
+densityMax
+densityMin
+densityAverage
+densityMedian
+densityMode <- names(which.max(table(winequalityred$density)))
+densityMode
+densityStandardDeviation <- sd(winequalityred$density)
+densityStandardDeviation
 ```
 #PH
 ```{r winequalityred}
-
+pHMax<-max(winequalityred$pH)
+pHMin<-min(winequalityred$pH)
+pHAverage<-mean(winequalityred$pH)
+pHMedian<-median(winequalityred$pH)
+pHMax
+pHMin
+pHAverage
+pHMedian
+pHMode <- names(which.max(table(winequalityred$pH)))
+pHMode
+pHStandardDeviation <- sd(winequalityred$pH)
+pHStandardDeviation
 ```
 
 #Sulfates
 ```{r winequalityred}
-
+sulphatesMax<-max(winequalityred$sulphates)
+sulphatesMin<-min(winequalityred$sulphates)
+sulphatesAverage<-mean(winequalityred$sulphates)
+sulphatesMedian<-median(winequalityred$sulphates)
+sulphatesMax
+sulphatesMin
+sulphatesAverage
+sulphatesMedian
+sulphatesMode <- names(which.max(table(winequalityred$sulphates)))
+sulphatesMode
+sulphatesStandardDeviation <- sd(winequalityred$sulphates)
+sulphatesStandardDeviation
 ```
 
 #Alcohol
 ```{r winequalityred}
-
+alcoholMax<-max(winequalityred$alcohol)
+alcoholMin<-min(winequalityred$alcohol)
+alcoholAverage<-mean(winequalityred$alcohol)
+alcoholMedian<-median(winequalityred$alcohol)
+alcoholMax
+alcoholMin
+alcoholAverage
+alcoholMedian
+alcoholMode <- names(which.max(table(winequalityred$alcohol)))
+alcoholMode
+alcoholStandardDeviation <- sd(winequalityred$alcohol)
+alcoholStandardDeviation
 ```
 
 ##Variable Correlations
