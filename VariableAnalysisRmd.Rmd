@@ -345,14 +345,11 @@ wine.rcorr = rcorr(as.matrix(winequalityred))
 wine.coeff = wine.rcorr$r
 wine.p = wine.rcorr$P
 library(corrplot)
-cex.before <- par("cex")
-par(cex = 0.7)
 corrplot(wine.cor)
 corrplot(wine.cor, tl.cex = 1, tl.col = "black", method = "number",
-         addCoef.col = "black", number.digits = 1, number.cex = 1, 
-         cl.pos = 'b', cl.cex = 1, addrect = .5, rect.lwd = .5,
+         addCoef.col = "black", number.digits = 1, number.cex = .5, 
+         cl.pos = 'b', cl.cex = .5, addrect = .5, rect.lwd = 1,
 col = colorRampPalette(c("red", "darkgrey","blue"))(100))
-
 ```
 #correlation cont'd
 ```{r}
