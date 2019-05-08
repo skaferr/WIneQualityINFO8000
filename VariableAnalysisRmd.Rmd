@@ -49,19 +49,77 @@ ggplot(data=winequalityred, aes(x=quality)) +
 ```
 
 ##Independent Variable Descripive Statistics
+#Fixed Acidity
 ```{r winequalityred}
-fixedac
-volatileac
-citric
-sugar
-chloride
-freeso2
-totalso2
-density
-ph
-sulfates
-alcohol
+#fixedac
+fixedacMax<-max(winequalityred$fixedacidity)
+fixedacMin<-min(winequalityred$fixedacidity)
+fixedacAverage<-mean(winequalityred$fixedacidity)
+fixedacMedian<-median(winequalityred$fixedacidity)
+fixedacMax
+fixedacMin
+fixedacAverage
+fixedacMedian
+fixedacMode <- names(which.max(table(winequalityred$fixedacidity)))
+fixedacMode
+fixedacStandardDeviation <- sd(winequalityred$fixedacidity)
+fixedacStandardDeviation
 ```
+#Volatile Acidity
+```{r winequalityred}
+volatileacMax<-max(winequalityred$volatileacidity)
+volatileacMin<-min(winequalityred$volatileacidity)
+volatileacAverage<-mean(winequalityred$volatileacidity)
+volatileacMedian<-median(winequalityred$volatileacidity)
+volatileacMax
+volatileacMin
+volatileacAverage
+volatileacMedian
+volatileacMode <- names(which.max(table(winequalityred$volatileacidity)))
+volatileacMode
+volatileacStandardDeviation <- sd(winequalityred$volatileacidity)
+volatileacStandardDeviation
+```
+#Citric Acid
+```{r winequalityred}
+
+```
+#Residual Sugar
+```{r winequalityred}
+
+```
+#Chlorides
+```{r winequalityred}
+
+```
+#Free SO2
+```{r winequalityred}
+
+```
+
+#Total SO2
+```{r winequalityred}
+
+```
+#Desnity
+```{r winequalityred}
+
+```
+#PH
+```{r winequalityred}
+
+```
+
+#Sulfates
+```{r winequalityred}
+
+```
+
+#Alcohol
+```{r winequalityred}
+
+```
+
 ##Variable Correlations
 ```{r winequalityred}
 
