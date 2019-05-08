@@ -1,0 +1,39 @@
+---
+title: "Ferrer_Sarah-Algorithm1"
+author: "Sarah"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#First of Three Machine Learning Algorithms Using CARET
+
+```{r}
+library(readxl)
+red <- read_excel("C:/Users/sarah/Desktop/info8000/winequalityred.xlsx", 
+    col_types = c("numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric"))
+library(caret)
+library(ranger)
+library(tidyverse)
+library(e1071)
+set.seed(65468)
+inTraining<-createDataPartition(red$quality,p=.75,list = FALSE)
+training<-red[inTraining,]
+testing<-red[-inTraining,]
+fitControl<-trainControl(## 10-fold CV
+  method = "cv",
+  number=10,
+  ##repeated ten times
+  repeats = 10)
+gbmFit1<- train(quality ~.,data=training,
+                method="gbm",
+                trControl = fitControl)
+gbmFit1
+```
+
+

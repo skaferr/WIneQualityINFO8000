@@ -1,0 +1,38 @@
+---
+title: "Algorithm 2"
+output: html_notebook
+---
+
+
+```{r}
+library(caret)
+library(ranger)
+library(tidyverse)
+library(e1071)
+library(readxl)
+redwine <- read_excel("C:/Users/sarah/Desktop/info8000/winequalityred.xlsx", 
+    col_types = c("numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric"))
+red2<-redwine%>%
+  select(-fixedacidity)%>%
+  select(-residualsugar)%>%
+  select(-freesulfurdioxide)%>%
+  select(-pH)
+
+set.seed(65468)
+inTraining<-createDataPartition(red2$quality,p=.75,list = FALSE)
+training<-red2[inTraining,]
+testing<-red2[-inTraining,]
+fitControl<-trainControl(## 10-fold CV
+  method = "cv",
+  number=10,
+  ##repeated ten times
+  repeats = 10)
+gbmFit2<- train(quality ~.,data=training,
+                method="gbm",
+                trControl = fitControl)
+gbmFit2
+```
+
