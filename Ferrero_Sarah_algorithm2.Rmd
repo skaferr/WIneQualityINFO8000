@@ -35,4 +35,4 @@ gbmFit2<- train(quality ~.,data=training,
                 trControl = fitControl)
 gbmFit2
 ```
-
+not a good model. low r-squared. lower with specific variables
