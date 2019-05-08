@@ -19,12 +19,16 @@ winequalityred <- read_excel("C:/Users/sarah/Desktop/info8000/winequalityred.xls
         "numeric", "numeric", "numeric", 
         "numeric", "numeric", "numeric", 
         "numeric", "numeric", "numeric"))
-View(winequalityred)
+QualityMax<-max(winequalityred$quality)
+QualityMin<-min(winequalityred$quality)
+QualityAverage<-mean(winequalityred$quality)
+QualityMedian<-median(winequalityred$quality)
 QualityMax
 QualityMin
 QualityAverage
 QualityMedian
-
+QualityMode <- names(which.max(table(winequalityred$quality)))
+QualityMode
 ```
 
 ## Wine Quality Distribution Graph
