@@ -8,7 +8,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Wine Quality Distribution
+## Wine Quality
 The following code will evaluate the basic descriptive statistics of the Wine Quality variable of interest/ variable to be tested in the machine learning algorithms.
 
 ```{r}
@@ -35,10 +35,11 @@ QualityStandardDeviation
 
 ```
 
-## Wine Quality Distribution Graph
+##Wine Quality Distribution Graph
 
 
-```{r winequalityred}
+```{r}
+library(ggplot2)
 ggplot(data=winequalityred, aes(x=quality)) +
     geom_histogram(binwidth=1, color='black', fill='white') +
     coord_cartesian(xlim=c(0,10)) +
@@ -50,7 +51,7 @@ ggplot(data=winequalityred, aes(x=quality)) +
 
 ##Independent Variable Descripive Statistics
 #Fixed Acidity
-```{r winequalityred}
+```{r}
 #fixedac
 fixedacMax<-max(winequalityred$fixedacidity)
 fixedacMin<-min(winequalityred$fixedacidity)
@@ -66,7 +67,7 @@ fixedacStandardDeviation <- sd(winequalityred$fixedacidity)
 fixedacStandardDeviation
 ```
 #Fixed Acidity Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=fixedacidity)) +
     geom_histogram(binwidth=1, color='black', fill='white') +
     coord_cartesian(xlim=c(0,16)) +
@@ -77,7 +78,7 @@ ggplot(data=winequalityred, aes(x=fixedacidity)) +
 ```
 
 #Volatile Acidity
-```{r winequalityred}
+```{r}
 volatileacMax<-max(winequalityred$volatileacidity)
 volatileacMin<-min(winequalityred$volatileacidity)
 volatileacAverage<-mean(winequalityred$volatileacidity)
@@ -92,7 +93,7 @@ volatileacStandardDeviation <- sd(winequalityred$volatileacidity)
 volatileacStandardDeviation
 ```
 ##Volatile Acidity Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=volatileacidity)) +
     geom_histogram(binwidth=.1, color='black', fill='white') +
     coord_cartesian(xlim=c(0,1.6)) +
@@ -103,7 +104,7 @@ ggplot(data=winequalityred, aes(x=volatileacidity)) +
 ```
 
 #Citric Acid
-```{r winequalityred}
+```{r}
 citricMax<-max(winequalityred$citricacid)
 citricMin<-min(winequalityred$citricacid)
 citricAverage<-mean(winequalityred$citricacid)
@@ -118,7 +119,7 @@ citricStandardDeviation <- sd(winequalityred$citricacid)
 citricStandardDeviation
 ```
 ## Citric acid distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=citricacid)) +
     geom_histogram(binwidth=.1, color='black', fill='white') +
     coord_cartesian(xlim=c(0,1)) +
@@ -129,7 +130,7 @@ ggplot(data=winequalityred, aes(x=citricacid)) +
 ```
 
 #Residual Sugar
-```{r winequalityred}
+```{r}
 sugarMax<-max(winequalityred$residualsugar)
 sugarMin<-min(winequalityred$residualsugar)
 sugarAverage<-mean(winequalityred$residualsugar)
@@ -144,7 +145,7 @@ sugarStandardDeviation <- sd(winequalityred$residualsugar)
 sugarStandardDeviation
 ```
 #sugar distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=residualsugar)) +
     geom_histogram(binwidth=.5, color='black', fill='white') +
     coord_cartesian(xlim=c(0,16)) +
@@ -155,7 +156,7 @@ ggplot(data=winequalityred, aes(x=residualsugar)) +
 ```
 
 #Chlorides
-```{r winequalityred}
+```{r}
 chloridesMax<-max(winequalityred$chlorides)
 chloridesMin<-min(winequalityred$chlorides)
 chloridesAverage<-mean(winequalityred$chlorides)
@@ -170,7 +171,7 @@ chloridesStandardDeviation <- sd(winequalityred$chlorides)
 chloridesStandardDeviation
 ```
 ##Chlorides Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=chlorides)) +
     geom_histogram(binwidth=.01, color='black', fill='white') +
     coord_cartesian(xlim=c(0,.7)) +
@@ -181,7 +182,7 @@ ggplot(data=winequalityred, aes(x=chlorides)) +
 ```
 
 #Free SO2
-```{r winequalityred}
+```{r}
 freesulfurdioxideMax<-max(winequalityred$freesulfurdioxide)
 freesulfurdioxideMin<-min(winequalityred$freesulfurdioxide)
 freesulfurdioxideAverage<-mean(winequalityred$freesulfurdioxide)
@@ -196,7 +197,7 @@ freesulfurdioxideStandardDeviation <- sd(winequalityred$freesulfurdioxide)
 freesulfurdioxideStandardDeviation
 ```
 ##Free SO2 Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=freesulfurdioxide)) +
     geom_histogram(binwidth=2, color='black', fill='white') +
     coord_cartesian(xlim=c(0,75)) +
@@ -207,7 +208,7 @@ ggplot(data=winequalityred, aes(x=freesulfurdioxide)) +
 ```
 
 #Total SO2
-```{r winequalityred}
+```{r}
 totalsulfurdioxideMax<-max(winequalityred$totalsulfurdioxide)
 totalsulfurdioxideMin<-min(winequalityred$totalsulfurdioxide)
 totalsulfurdioxideAverage<-mean(winequalityred$totalsulfurdioxide)
@@ -222,7 +223,7 @@ totalsulfurdioxideStandardDeviation <- sd(winequalityred$totalsulfurdioxide)
 totalsulfurdioxideStandardDeviation
 ```
 ##Total Sulfur Dioxide Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=totalsulfurdioxide)) +
     geom_histogram(binwidth=10, color='black', fill='white') +
     coord_cartesian(xlim=c(0,300)) +
@@ -233,7 +234,7 @@ ggplot(data=winequalityred, aes(x=totalsulfurdioxide)) +
 ```
 
 #Density
-```{r winequalityred}
+```{r}
 densityMax<-max(winequalityred$density)
 densityMin<-min(winequalityred$density)
 densityAverage<-mean(winequalityred$density)
@@ -248,7 +249,7 @@ densityStandardDeviation <- sd(winequalityred$density)
 densityStandardDeviation
 ```
 ##Density Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=density)) +
     geom_histogram(binwidth=.001, color='black', fill='white') +
     coord_cartesian(xlim=c(.99,1.005)) +
@@ -259,7 +260,7 @@ ggplot(data=winequalityred, aes(x=density)) +
 ```
 
 #PH
-```{r winequalityred}
+```{r}
 pHMax<-max(winequalityred$pH)
 pHMin<-min(winequalityred$pH)
 pHAverage<-mean(winequalityred$pH)
@@ -285,7 +286,7 @@ ggplot(data=winequalityred, aes(x=pH)) +
 ```
 
 #Sulfates
-```{r winequalityred}
+```{r}
 sulphatesMax<-max(winequalityred$sulphates)
 sulphatesMin<-min(winequalityred$sulphates)
 sulphatesAverage<-mean(winequalityred$sulphates)
@@ -300,7 +301,7 @@ sulphatesStandardDeviation <- sd(winequalityred$sulphates)
 sulphatesStandardDeviation
 ```
 ##Sulphates Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=sulphates)) +
     geom_histogram(binwidth=.1, color='black', fill='white') +
     coord_cartesian(xlim=c(0,2)) +
@@ -311,7 +312,7 @@ ggplot(data=winequalityred, aes(x=sulphates)) +
 ```
 
 #Alcohol
-```{r winequalityred}
+```{r}
 alcoholMax<-max(winequalityred$alcohol)
 alcoholMin<-min(winequalityred$alcohol)
 alcoholAverage<-mean(winequalityred$alcohol)
@@ -326,7 +327,7 @@ alcoholStandardDeviation <- sd(winequalityred$alcohol)
 alcoholStandardDeviation
 ```
 ##Alcohol Distribution
-```{r winequalityred}
+```{r}
 ggplot(data=winequalityred, aes(x=alcohol)) +
     geom_histogram(binwidth=.5, color='black', fill='white') +
     coord_cartesian(xlim=c(8,15)) +
@@ -337,14 +338,19 @@ ggplot(data=winequalityred, aes(x=alcohol)) +
 ```
 
 ##Variable Correlations
-```{r winequalityred}
+```{r}
 wine.cor = cor(winequalityred)
 library("Hmisc")
 wine.rcorr = rcorr(as.matrix(winequalityred))
 wine.coeff = wine.rcorr$r
 wine.p = wine.rcorr$P
 library(corrplot)
+cex.before <- par("cex")
+par(cex = 0.7)
 corrplot(wine.cor)
-
+corrplot(wine.cor, tl.cex = 1, tl.col = "black", method = "number",
+         addCoef.col = "black", number.digits = 1, number.cex = 1, 
+         cl.pos = 'b', cl.cex = 1, addrect = .5, rect.lwd = .5,
+col = colorRampPalette(c("red", "darkgrey","blue"))(100))
 ```
 
