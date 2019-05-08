@@ -345,6 +345,7 @@ wine.coeff = wine.rcorr$r
 wine.p = wine.rcorr$P
 library(corrplot)
 corrplot(wine.cor)
-
+wine.coeff
+wine.p
 ```
 
