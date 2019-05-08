@@ -65,6 +65,17 @@ fixedacMode
 fixedacStandardDeviation <- sd(winequalityred$fixedacidity)
 fixedacStandardDeviation
 ```
+#Fixed Acidity Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=fixedacidity)) +
+    geom_histogram(binwidth=1, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,16)) +
+    geom_vline(xintercept = fixedacMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = fixedacAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Fixed Acidity") +
+    ylab("Number of Observations")
+```
+
 #Volatile Acidity
 ```{r winequalityred}
 volatileacMax<-max(winequalityred$volatileacidity)
@@ -80,6 +91,17 @@ volatileacMode
 volatileacStandardDeviation <- sd(winequalityred$volatileacidity)
 volatileacStandardDeviation
 ```
+##Volatile Acidity Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=volatileacidity)) +
+    geom_histogram(binwidth=.1, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,1.6)) +
+    geom_vline(xintercept = volatileacMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = volatileacAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Volatile Acidity") +
+    ylab("Number of Observations")
+```
+
 #Citric Acid
 ```{r winequalityred}
 citricMax<-max(winequalityred$citricacid)
@@ -95,6 +117,17 @@ citricMode
 citricStandardDeviation <- sd(winequalityred$citricacid)
 citricStandardDeviation
 ```
+## Citric acid distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=citricacid)) +
+    geom_histogram(binwidth=.1, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,1)) +
+    geom_vline(xintercept = citricMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = citricAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Citric Acid") +
+    ylab("Number of Observations")
+```
+
 #Residual Sugar
 ```{r winequalityred}
 sugarMax<-max(winequalityred$residualsugar)
@@ -110,6 +143,17 @@ sugarMode
 sugarStandardDeviation <- sd(winequalityred$residualsugar)
 sugarStandardDeviation
 ```
+#sugar distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=residualsugar)) +
+    geom_histogram(binwidth=.5, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,16)) +
+    geom_vline(xintercept = sugarMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = sugarAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Residual Sugar") +
+    ylab("Number of Observations")
+```
+
 #Chlorides
 ```{r winequalityred}
 chloridesMax<-max(winequalityred$chlorides)
@@ -125,6 +169,17 @@ chloridesMode
 chloridesStandardDeviation <- sd(winequalityred$chlorides)
 chloridesStandardDeviation
 ```
+##Chlorides Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=chlorides)) +
+    geom_histogram(binwidth=.01, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,.7)) +
+    geom_vline(xintercept = chloridesMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = chloridesAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Chlorides") +
+    ylab("Number of Observations")
+```
+
 #Free SO2
 ```{r winequalityred}
 freesulfurdioxideMax<-max(winequalityred$freesulfurdioxide)
@@ -139,6 +194,16 @@ freesulfurdioxideMode <- names(which.max(table(winequalityred$freesulfurdioxide)
 freesulfurdioxideMode
 freesulfurdioxideStandardDeviation <- sd(winequalityred$freesulfurdioxide)
 freesulfurdioxideStandardDeviation
+```
+##Free SO2 Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=freesulfurdioxide)) +
+    geom_histogram(binwidth=2, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,75)) +
+    geom_vline(xintercept = freesulfurdioxideMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = freesulfurdioxideAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Free Sulfur Dioxide") +
+    ylab("Number of Observations")
 ```
 
 #Total SO2
@@ -156,6 +221,17 @@ totalsulfurdioxideMode
 totalsulfurdioxideStandardDeviation <- sd(winequalityred$totalsulfurdioxide)
 totalsulfurdioxideStandardDeviation
 ```
+##Total Sulfur Dioxide Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=totalsulfurdioxide)) +
+    geom_histogram(binwidth=10, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,300)) +
+    geom_vline(xintercept = totalsulfurdioxideMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = totalsulfurdioxideAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Total Sulfur Dioxide") +
+    ylab("Number of Observations")
+```
+
 #Density
 ```{r winequalityred}
 densityMax<-max(winequalityred$density)
@@ -171,6 +247,17 @@ densityMode
 densityStandardDeviation <- sd(winequalityred$density)
 densityStandardDeviation
 ```
+##Density Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=density)) +
+    geom_histogram(binwidth=.001, color='black', fill='white') +
+    coord_cartesian(xlim=c(.99,1.005)) +
+    geom_vline(xintercept = densityMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = densityAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Density") +
+    ylab("Number of Observations")
+```
+
 #PH
 ```{r winequalityred}
 pHMax<-max(winequalityred$pH)
@@ -185,6 +272,16 @@ pHMode <- names(which.max(table(winequalityred$pH)))
 pHMode
 pHStandardDeviation <- sd(winequalityred$pH)
 pHStandardDeviation
+```
+#pH Distribution
+```{r}
+ggplot(data=winequalityred, aes(x=pH)) +
+    geom_histogram(binwidth=.1, color='black', fill='white') +
+    coord_cartesian(xlim=c(2.5,4.5)) +
+    geom_vline(xintercept = pHMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = pHAverage, linetype=1, color='red', alpha=.5) +
+    xlab("pH") +
+    ylab("Number of Observations")
 ```
 
 #Sulfates
@@ -202,6 +299,16 @@ sulphatesMode
 sulphatesStandardDeviation <- sd(winequalityred$sulphates)
 sulphatesStandardDeviation
 ```
+##Sulphates Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=sulphates)) +
+    geom_histogram(binwidth=.1, color='black', fill='white') +
+    coord_cartesian(xlim=c(0,2)) +
+    geom_vline(xintercept = sulphatesMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = sulphatesAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Sulphates") +
+    ylab("Number of Observations")
+```
 
 #Alcohol
 ```{r winequalityred}
@@ -218,9 +325,26 @@ alcoholMode
 alcoholStandardDeviation <- sd(winequalityred$alcohol)
 alcoholStandardDeviation
 ```
+##Alcohol Distribution
+```{r winequalityred}
+ggplot(data=winequalityred, aes(x=alcohol)) +
+    geom_histogram(binwidth=.5, color='black', fill='white') +
+    coord_cartesian(xlim=c(8,15)) +
+    geom_vline(xintercept = alcoholMedian, linetype='longdash', alpha=.5) +
+    geom_vline(xintercept = alcoholAverage, linetype=1, color='red', alpha=.5) +
+    xlab("Alcohol") +
+    ylab("Number of Observations")
+```
 
 ##Variable Correlations
 ```{r winequalityred}
+wine.cor = cor(winequalityred)
+library("Hmisc")
+wine.rcorr = rcorr(as.matrix(winequalityred))
+wine.coeff = wine.rcorr$r
+wine.p = wine.rcorr$P
+library(corrplot)
+corrplot(wine.cor)
 
 ```
 
