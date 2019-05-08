@@ -1,6 +1,6 @@
 ---
 title: "Wine Quality Data Analysis"
-author: "Sarah Ferrero"
+author: "Sarah"
 output: html_document
 ---
 
