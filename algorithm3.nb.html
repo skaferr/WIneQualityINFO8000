@@ -1769,39 +1769,14 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShjYXJldClcbmxpYnJhcnkocmFuZ2VyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGUxMDcxKVxubGlicmFyeShyZWFkeGwpXG5yZWQgPC0gcmVhZF9leGNlbChcIkM6L1VzZXJzL3NhcmFoL0Rlc2t0b3AvaW5mbzgwMDAvd2luZXF1YWxpdHlyZWQueGxzeFwiLCBcbiAgICBjb2xfdHlwZXMgPSBjKFwibnVtZXJpY1wiLCBcIm51bWVyaWNcIiwgXCJudW1lcmljXCIsIFxuICAgICAgICBcIm51bWVyaWNcIiwgXCJudW1lcmljXCIsIFwibnVtZXJpY1wiLCBcbiAgICAgICAgXCJudW1lcmljXCIsIFwibnVtZXJpY1wiLCBcIm51bWVyaWNcIiwgXG4gICAgICAgIFwibnVtZXJpY1wiLCBcIm51bWVyaWNcIiwgXCJudW1lcmljXCIpKVxubGlicmFyeShjYXJldClcbmxpYnJhcnkocmFuZ2VyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGUxMDcxKVxuc2V0LnNlZWQoNjU0NjgpXG5pblRyYWluaW5nPC1jcmVhdGVEYXRhUGFydGl0aW9uKHJlZCRxdWFsaXR5LHA9Ljc1LGxpc3QgPSBGQUxTRSlcbnRyYWluaW5nPC1yZWRbaW5UcmFpbmluZyxdXG50ZXN0aW5nPC1yZWRbLWluVHJhaW5pbmcsXVxuZml0Q29udHJvbDwtdHJhaW5Db250cm9sKCMjIDEwLWZvbGQgQ1ZcbiAgbWV0aG9kID0gXCJjdlwiLFxuICBudW1iZXI9MTAsXG4gICMjcmVwZWF0ZWQgdGVuIHRpbWVzXG4gIHJlcGVhdHMgPSAxMClcbmBgYCJ9 -->
-<pre class="r"><code>library(caret)
-library(ranger)
-library(tidyverse)
-library(e1071)
-library(readxl)
-red &lt;- read_excel(&quot;C:/Users/sarah/Desktop/info8000/winequalityred.xlsx&quot;, 
-    col_types = c(&quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;, 
-        &quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;, 
-        &quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;, 
-        &quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;))
-library(caret)
-library(ranger)
-library(tidyverse)
-library(e1071)
-set.seed(65468)
-inTraining&lt;-createDataPartition(red$quality,p=.75,list = FALSE)
-training&lt;-red[inTraining,]
-testing&lt;-red[-inTraining,]
-fitControl&lt;-trainControl(## 10-fold CV
-  method = &quot;cv&quot;,
-  number=10,
-  ##repeated ten times
-  repeats = 10)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2F2ZShmaWxlPXJmZml0Lm1vZGVsLHJmRml0MSlcblxuYGBgIn0= -->
+<pre class="r"><code>save(file=rffit.model,rfFit1)
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHJlcGVhdHNgIGhhcyBubyBtZWFuaW5nIGZvciB0aGlzIHJlc2FtcGxpbmcgbWV0aG9kLlxuIn0= -->
-<pre><code>`repeats` has no meaning for this resampling method.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gc2F2ZShmaWxlID0gcmZmaXQubW9kZWwsIHJmRml0MSkgOiBcbiAgb2JqZWN0ICdyZmZpdC5tb2RlbCcgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Error in save(file = rffit.model, rfFit1) : 
+  object &#39;rffit.model&#39; not found</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmZGaXQxPC0gdHJhaW4ocXVhbGl0eSB+LixkYXRhPXRyYWluaW5nLFxuICAgICAgICAgICAgICAgIG1ldGhvZD1cInJmXCIsXG4gICAgICAgICAgICAgICAgdHJDb250cm9sID0gZml0Q29udHJvbClcbmBgYCJ9 -->
-<pre class="r"><code>rfFit1&lt;- train(quality ~.,data=training,
-                method=&quot;rf&quot;,
-                trControl = fitControl)</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmYyZml0PC0gdHJhaW4ocXVhbGl0eSB+IGFsY29ob2wgKyBjaXRyaWNhY2lkICsgdm9sYXRpbGVhY2lkaXR5ICsgdG90YWxzdWxmdXJkaW94aWRlICsgc3VscGhhdGVzICsgZml4ZWRhY2lkaXR5ICsgZGVuc2l0eSxcbiAgICAgICAgICAgICAgIGRhdGE9dHJhaW5pbmcsXG4gICAgICAgICAgICAgICBtZXRob2Q9XCJyZlwiLFxuICAgICAgICAgICAgICAgdHJDb250cm9sPWZpdENvbnRyb2wpXG5gYGAifQ== -->
@@ -1815,7 +1790,7 @@ fitControl&lt;-trainControl(## 10-fold CV
 <p>performs best when all variables are included!Still not great though…</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFsZ29yaXRobSAzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQpgYGB7cn0NCmxpYnJhcnkoY2FyZXQpDQpsaWJyYXJ5KHJhbmdlcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShlMTA3MSkNCmxpYnJhcnkocmVhZHhsKQ0KcmVkIDwtIHJlYWRfZXhjZWwoIkM6L1VzZXJzL3NhcmFoL0Rlc2t0b3AvaW5mbzgwMDAvd2luZXF1YWxpdHlyZWQueGxzeCIsIA0KICAgIGNvbF90eXBlcyA9IGMoIm51bWVyaWMiLCAibnVtZXJpYyIsICJudW1lcmljIiwgDQogICAgICAgICJudW1lcmljIiwgIm51bWVyaWMiLCAibnVtZXJpYyIsIA0KICAgICAgICAibnVtZXJpYyIsICJudW1lcmljIiwgIm51bWVyaWMiLCANCiAgICAgICAgIm51bWVyaWMiLCAibnVtZXJpYyIsICJudW1lcmljIikpDQpsaWJyYXJ5KGNhcmV0KQ0KbGlicmFyeShyYW5nZXIpDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkoZTEwNzEpDQpzZXQuc2VlZCg2NTQ2OCkNCmluVHJhaW5pbmc8LWNyZWF0ZURhdGFQYXJ0aXRpb24ocmVkJHF1YWxpdHkscD0uNzUsbGlzdCA9IEZBTFNFKQ0KdHJhaW5pbmc8LXJlZFtpblRyYWluaW5nLF0NCnRlc3Rpbmc8LXJlZFstaW5UcmFpbmluZyxdDQpmaXRDb250cm9sPC10cmFpbkNvbnRyb2woIyMgMTAtZm9sZCBDVg0KICBtZXRob2QgPSAiY3YiLA0KICBudW1iZXI9MTAsDQogICMjcmVwZWF0ZWQgdGVuIHRpbWVzDQogIHJlcGVhdHMgPSAxMCkNCg0KcmZGaXQxPC0gdHJhaW4ocXVhbGl0eSB+LixkYXRhPXRyYWluaW5nLA0KICAgICAgICAgICAgICAgIG1ldGhvZD0icmYiLA0KICAgICAgICAgICAgICAgIHRyQ29udHJvbCA9IGZpdENvbnRyb2wpDQpyZkZpdDENCmBgYA0KYGBge3J9DQpyZjJmaXQ8LSB0cmFpbihxdWFsaXR5IH4gYWxjb2hvbCArIGNpdHJpY2FjaWQgKyB2b2xhdGlsZWFjaWRpdHkgKyB0b3RhbHN1bGZ1cmRpb3hpZGUgKyBzdWxwaGF0ZXMgKyBmaXhlZGFjaWRpdHkgKyBkZW5zaXR5LA0KICAgICAgICAgICAgICAgZGF0YT10cmFpbmluZywNCiAgICAgICAgICAgICAgIG1ldGhvZD0icmYiLA0KICAgICAgICAgICAgICAgdHJDb250cm9sPWZpdENvbnRyb2wpDQpyZjJmaXQNCmBgYA0KcGVyZm9ybXMgYmVzdCB3aGVuIGFsbCB2YXJpYWJsZXMgYXJlIGluY2x1ZGVkIVN0aWxsIG5vdCBncmVhdCB0aG91Z2guLi4NCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFsZ29yaXRobSAzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQpgYGB7cn0NCmxpYnJhcnkoY2FyZXQpDQpsaWJyYXJ5KHJhbmdlcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShlMTA3MSkNCmxpYnJhcnkocmVhZHhsKQ0KcmVkIDwtIHJlYWRfZXhjZWwoIkM6L1VzZXJzL3NhcmFoL0Rlc2t0b3AvaW5mbzgwMDAvd2luZXF1YWxpdHlyZWQueGxzeCIsIA0KICAgIGNvbF90eXBlcyA9IGMoIm51bWVyaWMiLCAibnVtZXJpYyIsICJudW1lcmljIiwgDQogICAgICAgICJudW1lcmljIiwgIm51bWVyaWMiLCAibnVtZXJpYyIsIA0KICAgICAgICAibnVtZXJpYyIsICJudW1lcmljIiwgIm51bWVyaWMiLCANCiAgICAgICAgIm51bWVyaWMiLCAibnVtZXJpYyIsICJudW1lcmljIikpDQpsaWJyYXJ5KGNhcmV0KQ0KbGlicmFyeShyYW5nZXIpDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkoZTEwNzEpDQpzZXQuc2VlZCg2NTQ2OCkNCmluVHJhaW5pbmc8LWNyZWF0ZURhdGFQYXJ0aXRpb24ocmVkJHF1YWxpdHkscD0uNzUsbGlzdCA9IEZBTFNFKQ0KdHJhaW5pbmc8LXJlZFtpblRyYWluaW5nLF0NCnRlc3Rpbmc8LXJlZFstaW5UcmFpbmluZyxdDQpmaXRDb250cm9sPC10cmFpbkNvbnRyb2woIyMgMTAtZm9sZCBDVg0KICBtZXRob2QgPSAiY3YiLA0KICBudW1iZXI9MTAsDQogICMjcmVwZWF0ZWQgdGVuIHRpbWVzDQogIHJlcGVhdHMgPSAxMCkNCg0KcmZGaXQxPC0gdHJhaW4ocXVhbGl0eSB+LixkYXRhPXRyYWluaW5nLA0KICAgICAgICAgICAgICAgIG1ldGhvZD0icmYiLA0KICAgICAgICAgICAgICAgIHRyQ29udHJvbCA9IGZpdENvbnRyb2wpDQpyZkZpdDENCnNhdmUoZmlsZT0ncmZmaXQubW9kZWwnLHJmRml0MSkNCmBgYA0KYGBge3J9DQpyZjJmaXQ8LSB0cmFpbihxdWFsaXR5IH4gYWxjb2hvbCArIGNpdHJpY2FjaWQgKyB2b2xhdGlsZWFjaWRpdHkgKyB0b3RhbHN1bGZ1cmRpb3hpZGUgKyBzdWxwaGF0ZXMgKyBmaXhlZGFjaWRpdHkgKyBkZW5zaXR5LA0KICAgICAgICAgICAgICAgZGF0YT10cmFpbmluZywNCiAgICAgICAgICAgICAgIG1ldGhvZD0icmYiLA0KICAgICAgICAgICAgICAgdHJDb250cm9sPWZpdENvbnRyb2wpDQpyZjJmaXQNCmBgYA0KcGVyZm9ybXMgYmVzdCB3aGVuIGFsbCB2YXJpYWJsZXMgYXJlIGluY2x1ZGVkIVN0aWxsIG5vdCBncmVhdCB0aG91Z2guLi4NCg==</div>
 
 
 

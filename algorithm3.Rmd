@@ -33,6 +33,7 @@ rfFit1<- train(quality ~.,data=training,
                 method="rf",
                 trControl = fitControl)
 rfFit1
+save(file='rffit.model',rfFit1)
 ```
 ```{r}
 rf2fit<- train(quality ~ alcohol + citricacid + volatileacidity + totalsulfurdioxide + sulphates + fixedacidity + density,
