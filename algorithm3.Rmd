@@ -1,6 +1,10 @@
 ---
 title: "Algorithm 3"
-output: html_notebook
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 
@@ -35,6 +39,20 @@ rfFit1<- train(quality ~.,data=training,
 rfFit1
 save(file='rffit.model',rfFit1)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```{r}
 rf2fit<- train(quality ~ alcohol + citricacid + volatileacidity + totalsulfurdioxide + sulphates + fixedacidity + density,
                data=training,

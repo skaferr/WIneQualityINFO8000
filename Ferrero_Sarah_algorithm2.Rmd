@@ -1,6 +1,8 @@
 ---
 title: "Algorithm 2"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -33,6 +35,5 @@ fitControl<-trainControl(## 10-fold CV
 gbmFit2<- train(quality ~.,data=training,
                 method="gbm",
                 trControl = fitControl)
-gbmFit2
 ```
 not a good model. low r-squared. lower with specific variables
